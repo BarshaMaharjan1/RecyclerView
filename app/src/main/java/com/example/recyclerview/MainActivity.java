@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 
+import java.util.ArrayDeque;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +33,16 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
     }
 
+
+    public void onClick(View view) {
+
+            int wordListSize = myworldList.size();
+            myworldList.addLast("+ Word" + wordListSize);
+            mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
+            mRecyclerView.smoothScrollToPosition(wordListSize);
+
+
+    }
 }

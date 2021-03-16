@@ -15,7 +15,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/ic_add_for_fab"
-        android:layout_margin="40dp"/>
+        android:layout_margin="40dp"
+        android:onClick="onClick"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
