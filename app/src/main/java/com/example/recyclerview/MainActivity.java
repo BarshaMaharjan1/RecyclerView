@@ -1,5 +1,6 @@
 package com.example.recyclerview;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayDeque;
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private final LinkedList<String> myworldList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
+    private Menu menu;
 
 
     @Override
@@ -44,5 +48,11 @@ public class MainActivity extends AppCompatActivity {
             mRecyclerView.smoothScrollToPosition(wordListSize);
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 }
